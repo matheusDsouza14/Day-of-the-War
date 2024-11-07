@@ -1,0 +1,4 @@
+repository "Day of War@TIPUC_MatheusDellAreti_e_EduardoHenrique@cloud"
+  path "/"
+    br "/main"
+    co "/main"
