@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     {
 
         Manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        movespeed = 10f;
+        rotatespeed = 90f;
         //waypointMove = GameObject.Find("Main Camera").GetComponent<WaypointMove>();
     }
     void Update()

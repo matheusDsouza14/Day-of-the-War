@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54049e44cc6240d49ad4e7a3334ea6ea, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -97,6 +101,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 54049e44cc6240d49ad4e7a3334ea6ea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2583583310038905826}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 54049e44cc6240d49ad4e7a3334ea6ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5510289421789499933}
   m_SourcePrefab: {fileID: 100100000, guid: 54049e44cc6240d49ad4e7a3334ea6ea, type: 3}
 --- !u!4 &5860946292074078004 stripped
 Transform:
@@ -135,3 +142,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-5510289421789499933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6493508093581165966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f268228ea94da544aa373d1dab20d5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  player: {fileID: 0}
+  speed: 0
+  gameManager: {fileID: 0}
+  bulletNshooting: {fileID: 0}

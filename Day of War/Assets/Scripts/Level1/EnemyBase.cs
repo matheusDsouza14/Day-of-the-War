@@ -6,6 +6,7 @@ public class EnemyBase : MonoBehaviour
 {
     public int health;
     [SerializeField] Transform player;
+    [SerializeField] float speed;
     [SerializeField] GameManager gameManager;
     [SerializeField] BulletNShooting bulletNshooting;
 
@@ -14,11 +15,12 @@ public class EnemyBase : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         bulletNshooting = GetComponent<BulletNShooting>();
         player = GameObject.Find("Plane").GetComponent<Transform>();
+        speed = Random.Range(4f, 6f);
         StartCoroutine(shootingenemy());
     }
     void Update()
     {
-        //transform.Translate();
+        transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         transform.LookAt(player);
     }
     private IEnumerator shootingenemy()

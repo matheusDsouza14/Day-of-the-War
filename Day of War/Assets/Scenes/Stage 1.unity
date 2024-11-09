@@ -1401,8 +1401,8 @@ MonoBehaviour:
   Manager: {fileID: 258096304}
   bulletNShooting: {fileID: 1606545974}
   cameras:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1921703434}
+  - {fileID: 1700419739}
   minBounds: {x: 0, y: 0, z: 0}
   maxBounds: {x: 0, y: 0, z: 0}
 --- !u!4 &1606545976 stripped

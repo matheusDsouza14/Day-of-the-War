@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         bossmaxHealth = 70;
         bossHealth = bossmaxHealth;
         enemiesleft = 6;
+        bossBattleToggle=false;
         InvokeRepeating("spawnenemy", 3f, 3f);
     }
     void Update()
