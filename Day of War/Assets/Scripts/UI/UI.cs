@@ -18,7 +18,7 @@ public class UI : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         playerhealthSlider.maxValue = gameManager.playermaxHealth;
-        bossHealthSlider.maxValue = gameManager.bossmaxHealth;
+        bossHealthSlider.maxValue = gameManager.playermaxHealth;
         bossHealthSlider.gameObject.SetActive(false);
         bossnametext.gameObject.SetActive(false);
     }
@@ -27,7 +27,7 @@ public class UI : MonoBehaviour
     {
         playerhealthSlider.value = gameManager.playerhealth;
         bossHealthSlider.value = gameManager.bossHealth;
-        ammoText.text = "AMMO: " + gameManager.ammo;
+        ammoText.text = $"AMMO: {gameManager.ammo}";
         if (gameManager.bossBattleToggle)
         {
             bossHealthSlider.gameObject.SetActive(true);

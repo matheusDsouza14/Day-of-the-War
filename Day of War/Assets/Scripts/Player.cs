@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField]private float rotatespeed;
     [SerializeField]private GameManager Manager;
     [SerializeField]private BulletNShooting bulletNShooting;
-    [SerializeField]private WaypointMove waypointMove;
+    //[SerializeField]private WaypointMove waypointMove;
     [SerializeField]private Camera[] cameras = new Camera[2];
     [SerializeField]private Vector3 minBounds,maxBounds;
     void Start()

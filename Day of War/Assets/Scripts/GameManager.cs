@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        scrolltexture();
+        //scrolltexture();
         if(bossBattleToggle==true)
         {
             cameragameobject[0].SetActive(false);

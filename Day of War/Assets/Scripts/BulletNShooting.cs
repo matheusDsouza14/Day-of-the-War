@@ -6,21 +6,26 @@ using UnityEngine;
 public class BulletNShooting : MonoBehaviour
 {
     [SerializeField] private GameManager GameManager;
-    [SerializeField] Transform bulletSpawn;
+    [SerializeField] Transform[] normalBulletSpawn = new Transform[2];
+    [SerializeField] Transform MissileSpawn;
     [SerializeField] GameObject bulletPrefab;
     public bool canshoot;
     private bool isReloading = false;
     private void Start()
     {
-        bulletSpawn = this.GetComponentInChildren<Transform>();
+        normalBulletSpawn[1] = this.GetComponentInChildren<Transform>();
         GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         if (this.CompareTag("Player"))
         {
-            bulletSpawn = this.GetComponentInChildren<Transform>();
+            for (int i = 0; i < normalBulletSpawn.Length; i++) {
+                normalBulletSpawn[i] = this.gameObject.transform.GetChild(i);
+            }
+            MissileSpawn = this.transform.GetChild(2);
         }
         if (this.CompareTag("Enemy"))
         {
-            bulletSpawn = this.GetComponentInChildren<Transform>();
+            normalBulletSpawn[0] = this.GetComponentInChildren<Transform>();
+            normalBulletSpawn[1] = this.GetComponentInChildren<Transform>();
         }
         canshoot = true;
     }
@@ -39,9 +44,10 @@ public class BulletNShooting : MonoBehaviour
     {
         if (canshoot)
         {
+            int random = Random.Range(0, normalBulletSpawn.Length);
             float bulletSpeed = 200f;
-            var bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = bulletSpawn.forward * bulletSpeed;
+            var bullet = Instantiate(bulletPrefab, normalBulletSpawn[random].position, normalBulletSpawn[1].rotation);
+            bullet.GetComponent<Rigidbody>().velocity = normalBulletSpawn[1].forward * bulletSpeed;
             if(this.gameObject.name == "Plane")
             {
                 GameManager.ammo -= 1;
