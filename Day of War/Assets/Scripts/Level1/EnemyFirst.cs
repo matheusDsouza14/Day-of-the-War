@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBase : MonoBehaviour
+public class EnemyFirst : MonoBehaviour
 {
     public int health;
     [SerializeField] Transform player;
@@ -14,7 +14,7 @@ public class EnemyBase : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         bulletNshooting = GetComponent<BulletNShooting>();
-        player = GameObject.Find("Plane").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         speed = Random.Range(4f, 6f);
         StartCoroutine(shootingenemy());
     }
@@ -34,7 +34,7 @@ public class EnemyBase : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy")
         {
             Destroy(this.gameObject);
         }
