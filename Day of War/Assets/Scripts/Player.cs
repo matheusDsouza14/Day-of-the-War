@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField]private float screenwidth;
     [SerializeField]private float screenheight;
+    [SerializeField]private EdgeCollider2D edgeCollider;
     [SerializeField]private float movespeed;
     [SerializeField]private float rotatespeed;
     [SerializeField]private GameManager Manager;
@@ -73,5 +74,11 @@ public class Player : MonoBehaviour
         // Define the min and max bounds based on these screen corners
         minBounds = new Vector3(bottomLeft.x, playerY, bottomLeft.z);
         maxBounds = new Vector3(topRight.x, playerY, topRight.z);
+    }
+    public void EdgeCalculation()
+    {
+        edgeCollider.SetPoints();
+        screenheight = Screen.height;
+        screenwidth = Screen.width;
     }
 }
